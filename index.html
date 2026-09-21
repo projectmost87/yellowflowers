@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Jimena 🌻</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fff8c9, #ffd86b, #fff3a6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #5a4100;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .inicio {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 40px 25px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(120, 85, 0, 0.25);
+      animation: aparecer 1.5s ease;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 10px 0;
+      color: #d99b00;
+    }
+
+    .flor-grande {
+      font-size: 80px;
+      animation: flotar 2s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    button {
+      border: none;
+      background: #f5b400;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 7px 15px rgba(160, 110, 0, 0.3);
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #e49f00;
+    }
+
+    .carta {
+      display: none;
+      background: rgba(255, 255, 255, 0.94);
+      padding: 35px 28px;
+      border-radius: 30px;
+      box-shadow: 0 15px 45px rgba(100, 70, 0, 0.3);
+      animation: aparecer 1.5s ease;
+    }
+
+    .carta h2 {
+      color: #e0a000;
+      font-size: 32px;
+    }
+
+    .mensaje {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .firma {
+      margin-top: 25px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d58e00;
+    }
+
+    .flores {
+      font-size: 45px;
+      margin: 15px 0;
+      letter-spacing: 8px;
+    }
+
+    .corazon {
+      color: #ff5c7a;
+      font-size: 35px;
+      animation: latido 1s infinite;
+      display: inline-block;
+    }
+
+    /* Flores flotando */
+    .flor {
+      position: fixed;
+      top: -60px;
+      font-size: 30px;
+      animation: caer linear infinite;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    @keyframes caer {
+      0% {
+        transform: translateY(-60px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes flotar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes latido {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.25);
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .flor-grande {
+        font-size: 65px;
+      }
+
+      .mensaje {
+        font-size: 17px;
+      }
+
+      .inicio,
+      .carta {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Flores que caen -->
+  <div class="flor" style="left:5%; animation-duration:7s;">🌻</div>
+  <div class="flor" style="left:18%; animation-duration:9s; animation-delay:2s;">🌼</div>
+  <div class="flor" style="left:32%; animation-duration:8s; animation-delay:1s;">🌻</div>
+  <div class="flor" style="left:48%; animation-duration:10s; animation-delay:3s;">🌼</div>
+  <div class="flor" style="left:65%; animation-duration:7s; animation-delay:1s;">🌻</div>
+  <div class="flor" style="left:80%; animation-duration:9s; animation-delay:4s;">🌼</div>
+  <div class="flor" style="left:93%; animation-duration:8s;">🌻</div>
+
+  <div class="container">
+
+    <!-- Pantalla inicial -->
+    <div class="inicio" id="inicio">
+
+      <div class="flor-grande">🌻</div>
+
+      <h1>Para Jimena 💛</h1>
+
+      <p>
+        Tengo una pequeña sorpresa para ti...
+      </p>
+
+      <p>
+        🌼 Haz clic para descubrirla 🌼
+      </p>
+
+      <button onclick="abrirCarta()">
+        💌 Abrir mi regalo
+      </button>
+
+    </div>
+
+    <!-- Carta -->
+    <div class="carta" id="carta">
+
+      <div class="flores">
+        🌻 🌻 🌻
+      </div>
+
+      <h2>Jimena, mi amor 💛</h2>
+
+      <div class="mensaje">
+
+        <p>
+          Hoy quiero regalarte estas flores amarillas como
+          un pequeño detalle para recordarte lo especial
+          que eres para mí.
+        </p>
+
+        <p>
+          Cada día a tu lado hace que mi vida tenga más
+          color, más sonrisas y momentos que quiero guardar
+          para siempre.
+        </p>
+
+        <p>
+          Gracias por estar en mi vida, por tu cariño y por
+          hacerme tan feliz.
+        </p>
+
+        <p>
+          <strong>
+            Te quiero muchísimo, Jimena.
+          </strong>
+        </p>
+
+        <p>
+          Espero que estas flores te recuerden que siempre
+          hay una razón para sonreír...
+          y yo quiero ser parte de muchas de esas razones. 🌻
+        </p>
+
+      </div>
+
+      <div class="corazon">❤️</div>
+
+      <div class="firma">
+        Con todo mi amor,<br>
+        Geovanny 💛
+      </div>
+
+      <div class="flores">
+        🌼 🌻 🌼
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function abrirCarta() {
+
+      document.getElementById("inicio").style.display = "none";
+
+      document.getElementById("carta").style.display = "block";
+
+      crearCorazones();
+
+    }
+
+    function crearCorazones() {
+
+      for (let i = 0; i < 20; i++) {
+
+        const corazon = document.createElement("div");
+
+        corazon.innerHTML = "❤️";
+
+        corazon.style.position = "fixed";
+        corazon.style.left = Math.random() * 100 + "vw";
+        corazon.style.bottom = "-40px";
+        corazon.style.fontSize = (15 + Math.random() * 25) + "px";
+        corazon.style.zIndex = "10";
+        corazon.style.transition = "transform 5s linear, opacity 5s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+
+          corazon.style.transform =
+            "translateY(-110vh) rotate(" +
+            (Math.random() * 360) +
+            "deg)";
+
+          corazon.style.opacity = "0";
+
+        }, 100);
+
+        setTimeout(() => {
+          corazon.remove();
+        }, 5500);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
